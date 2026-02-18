@@ -1,0 +1,26 @@
+{
+    "1": {
+        "title": "Math 101",
+        "lessons": [
+            {"title": "Introduction to Algebra", "description": "Learn the basics of algebraic expressions and equations."},
+            {"title": "Geometry Basics", "description": "Explore shapes, angles, and their properties."},
+            {"title": "Number Systems", "description": "Understand integers, fractions, and decimals."}
+        ]
+    },
+    "2": {
+        "title": "French Basics",
+        "lessons": [
+            {"title": "Greetings and Introductions", "description": "Master common French phrases for introductions."},
+            {"title": "Basic Vocabulary", "description": "Learn essential French words and phrases."},
+            {"title": "Simple Grammar", "description": "Understand basic French sentence structure."}
+        ]
+    },
+    "3": {
+        "title": "Swahili Culture",
+        "lessons": [
+            {"title": "History of Swahili", "description": "Discover the origins of the Swahili language and culture."},
+            {"title": "Traditional Practices", "description": "Explore Swahili customs and traditions."},
+            {"title": "Modern Swahili Society", "description": "Learn about contemporary Swahili-speaking communities."}
+        ]
+    }
+}

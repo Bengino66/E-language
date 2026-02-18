@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eLearning System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body style="background-color: #F5F5F5;">
+    <!-- Navigation Bar -->
+    <nav style="background-color: #8B4513; color: #FFFFFF;" class="fixed w-full top-0 shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">eLearning</div>
+            <div class="hidden md:flex space-x-4 items-center">
+                <a href="index.html" class="nav-link" style="color: #FFFFFF;">Home</a>
+                <a href="signup.php" class="nav-link" style="color: #FFFFFF;">Signup</a>
+                <a href="login.php" class="nav-link" style="color: #FFFFFF;">Login</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden" style="background-color: #8B4513;">
+            <a href="index.html" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Home</a>
+            <a href="signup.php" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Signup</a>
+            <a href="login.php" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Login</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12" style="background-color: #F5F5F5; text-align: center;">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to the eLearning Platform</h1>
+            <p class="text-lg md:text-xl mb-6">Join as a student or teacher to access courses in English, French, and Swahili.</p>
+            <img src="images/display.jpeg" alt="eLearning Platform" class="mx-auto rounded-lg shadow-lg max-w-full h-80 object-cover">
+        </div>
+    </section>
+
+    <!-- Language Section -->
+    <section class="py-12" style="background-color: #F5F5F5;">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Learn with Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition">
+                    <img src="images/english.jpeg" alt="English Courses" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold">English Courses</h3>
+                    <p class="text-gray-600 mb-4">Access a variety of courses in English.</p>
+                    <a href="signup.php" class="enroll-btn">Enroll Now</a>
+                </div>
+                <div class="card bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition">
+                    <img src="images/french.jpeg" alt="French Courses" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold">French Courses</h3>
+                    <p class="text-gray-600 mb-4">Explore courses designed for French learners.</p>
+                    <a href="signup.php" class="enroll-btn">Enroll Now</a>
+                </div>
+                <div class="card bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition">
+                    <img src="images/swahili.jpeg" alt="Swahili Courses" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold">Swahili Courses</h3>
+                    <p class="text-gray-600 mb-4">Discover courses in Swahili culture and language.</p>
+                    <a href="signup.php" class="enroll-btn">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaboration Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Collaborate and Learn</h2>
+            <div class="card bg-white rounded-lg shadow-lg p-6 text-center">
+                <img src="images/Colleagues teamwork, brainstorm flat.jpeg" alt="Teamwork and Collaboration" class="w-full h-60 object-cover rounded-lg mb-4">
+                <p class="text-lg">Join a community of learners and educators to share knowledge and grow.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section class="py-12" style="background-color: #F5F5F5;">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+            <p class="text-lg mb-6">Subscribe to our newsletter for the latest courses and updates.</p>
+            <div class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 rounded-l-lg border border-brown-800 focus:outline-none focus:ring-2 focus:ring-brown-800">
+                <button class="bg-brown-800 text-white px-6 py-2 rounded-r-lg hover:bg-light-brown-200 transition">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #8B4513; color: white; width: 100vw; margin: 0; padding: 0;">
+        <div class="footer-content" style="padding: 2rem 1rem;">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">eLearning Platform</h3>
+                    <p>Empowering education through accessible online courses.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" class="hover:text-light-brown-200">Home</a></li>
+                        <li><a href="signup.php" class="hover:text-light-brown-200">Signup</a></li>
+                        <li><a href="login.php" class="hover:text-light-brown-200">Login</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <p>Email: info@elearning.com</p>
+                    <p>Follow us:</p>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="#" class="hover:text-light-brown-200">Twitter</a>
+                        <a href="#" class="hover:text-light-brown-200">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <p>© 2025 eLearning Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
