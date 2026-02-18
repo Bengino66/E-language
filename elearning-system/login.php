@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <a href="login.php" class="nav-link" style="color: #FFFFFF;">Login</a>
                 <a href="signup.php" class="nav-link" style="color: #FFFFFF;">Signup</a>
             </div>
-            <button id="menu-toggle" class="md:hidden focus:outline-none">
+            <button id="menu-toggle" class="md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-md p-1" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
