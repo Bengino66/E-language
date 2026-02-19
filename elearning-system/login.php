@@ -49,8 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- Tailwind CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" onerror="console.error('Failed to load Tailwind CDN')">
     <!-- Local styles.css -->
-    <link rel="stylesheet" href="/elearning-system/css/styles.css" onerror="console.error('Failed to load styles.css')">
-    <script src="/elearning-system/js/script.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css" onerror="console.error('Failed to load styles.css')">
+    <script src="js/script.js" defer></script>
     <script>
         console.log('login.php: styles.css loaded');
     </script>
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold">eLearning</div>
             <div class="hidden md:flex space-x-4 items-center">
-                <a href="index.php" class="nav-link" style="color: #FFFFFF;">Home</a>
+                <a href="index.html" class="nav-link" style="color: #FFFFFF;">Home</a>
                 <a href="login.php" class="nav-link" style="color: #FFFFFF;">Login</a>
                 <a href="signup.php" class="nav-link" style="color: #FFFFFF;">Signup</a>
             </div>
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </button>
         </div>
         <div id="mobile-menu" class="hidden" style="background-color: #8B4513;">
-            <a href="index.php" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Home</a>
+            <a href="index.html" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Home</a>
             <a href="login.php" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Login</a>
             <a href="signup.php" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Signup</a>
         </div>
@@ -146,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div>
                     <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                     <ul>
-                        <li><a href="index.php" class="hover:text-light-brown-200">Home</a></li>
+                        <li><a href="index.html" class="hover:text-light-brown-200">Home</a></li>
                         <li><a href="signup.php" class="hover:text-light-brown-200">Signup</a></li>
                         <li><a href="login.php" class="hover:text-light-brown-200">Login</a></li>
                     </ul>

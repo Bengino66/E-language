@@ -100,7 +100,7 @@ try {
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold">eLearning</div>
             <div class="hidden md:flex space-x-4 items-center">
-                <a href="index.php" class="nav-link hover:text-yellow-300">Home</a>
+                <a href="index.html" class="nav-link hover:text-yellow-300">Home</a>
                 <a href="dashboard.php" class="nav-link hover:text-yellow-300">Dashboard</a>
                 <a href="logout.php" class="nav-link hover:text-yellow-300">Logout</a>
             </div>
@@ -133,7 +133,7 @@ try {
                     <?php foreach ($resources as $resource): 
                         $type = $resource['type'] ?? 'file';
                         $web_path = 'Uploads/' . basename($resource['file_path']);
-                        $absolute_path = $_SERVER['DOCUMENT_ROOT'] . '/elearning-system/' . $web_path;
+                        $absolute_path = __DIR__ . '/' . $web_path;
                         // Validate file existence
                         if ($type !== 'url' && !file_exists($absolute_path)) {
                             error_log("course.php: Resource file not found - ID: {$resource['id']}, Path: $absolute_path");
@@ -152,7 +152,7 @@ try {
                                 <img src="<?= htmlspecialchars($web_path) ?>" alt="<?= htmlspecialchars($resource['title']) ?>" class="w-full">
                             <?php else: ?>
                                 <div class="p-6 flex justify-center">
-                                    <img src="/elearning-system/images/<?= htmlspecialchars($type) ?>-icon.png" alt="<?= htmlspecialchars($type) ?> icon" class="icon-img">
+                                    <img src="images/<?= htmlspecialchars($type) ?>-icon.png" alt="<?= htmlspecialchars($type) ?> icon" class="icon-img">
                                 </div>
                             <?php endif; ?>
                             

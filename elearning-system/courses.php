@@ -32,8 +32,8 @@ $enrolled_courses = array_column($stmt->fetchAll(), 'course_id');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browse Courses</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" onerror="console.error('Failed to load Tailwind CDN')">
-    <link rel="stylesheet" href="/elearning-system/css/styles.css" onerror="console.error('Failed to load styles.css')">
-    <script src="/elearning-system/js/script.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css" onerror="console.error('Failed to load styles.css')">
+    <script src="js/script.js" defer></script>
     <script>
         console.log('courses.php: styles.css loaded');
     </script>
@@ -44,7 +44,7 @@ $enrolled_courses = array_column($stmt->fetchAll(), 'course_id');
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold">eLearning</div>
             <div class="hidden md:flex space-x-4 items-center">
-                <a href="index.php" class="nav-link" style="color: #FFFFFF;">Home</a>
+                <a href="index.html" class="nav-link" style="color: #FFFFFF;">Home</a>
                 <a href="dashboard.php" class="nav-link" style="color: #FFFFFF;">Dashboard</a>
                 <a href="logout.php" class="nav-link" style="color: #FFFFFF;">Logout</a>
             </div>
@@ -55,7 +55,7 @@ $enrolled_courses = array_column($stmt->fetchAll(), 'course_id');
             </button>
         </div>
         <div id="mobile-menu" class="hidden" style="background-color: #8B4513;">
-            <a href="index.php" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Home</a>
+            <a href="index.html" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Home</a>
             <a href="dashboard.php" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Dashboard</a>
             <a href="logout.php" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Logout</a>
         </div>
@@ -106,7 +106,7 @@ $enrolled_courses = array_column($stmt->fetchAll(), 'course_id');
                 <div>
                     <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                     <ul>
-                        <li><a href="index.php" class="hover:text-light-brown-200">Home</a></li>
+                        <li><a href="index.html" class="hover:text-light-brown-200">Home</a></li>
                         <li><a href="signup.php" class="hover:text-light-brown-200">Signup</a></li>
                         <li><a href="login.php" class="hover:text-light-brown-200">Login</a></li>
                     </ul>

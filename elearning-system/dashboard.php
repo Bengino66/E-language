@@ -37,7 +37,7 @@ $enrollments = $stmt->fetchAll();
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold">eLearning</div>
             <div class="hidden md:flex space-x-4 items-center">
-                <a href="index.php" class="nav-link" style="color: #FFFFFF;">Home</a>
+                <a href="index.html" class="nav-link" style="color: #FFFFFF;">Home</a>
                 <a href="dashboard.php" class="nav-link" style="color: #FFFFFF;">Dashboard</a>
                 <a href="logout.php" class="nav-link" style="color: #FFFFFF;">Logout</a>
             </div>
@@ -48,7 +48,7 @@ $enrollments = $stmt->fetchAll();
             </button>
         </div>
         <div id="mobile-menu" class="hidden" style="background-color: #8B4513;">
-            <a href="index.php" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Home</a>
+            <a href="index.html" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Home</a>
             <a href="dashboard.php" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Dashboard</a>
             <a href="logout.php" class="nav-link block px-4 py-2" style="color: #FFFFFF;">Logout</a>
         </div>
@@ -98,7 +98,7 @@ $enrollments = $stmt->fetchAll();
                 <div>
                     <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                     <ul>
-                        <li><a href="index.php" class="hover:text-light-brown-200">Home</a></li>
+                        <li><a href="index.html" class="hover:text-light-brown-200">Home</a></li>
                         <li><a href="signup.php" class="hover:text-light-brown-200">Signup</a></li>
                         <li><a href="login.php" class="hover:text-light-brown-200">Login</a></li>
                     </ul>
