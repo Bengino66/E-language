@@ -39,6 +39,7 @@ $enrolled_courses = array_column($stmt->fetchAll(), 'course_id');
     </script>
 </head>
 <body style="background-color: #F5F5F5;">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-gray-800 p-2 z-[100] rounded shadow border-2 border-gray-800">Skip to content</a>
     <!-- Navigation Bar -->
     <nav style="background-color: #8B4513; color: #FFFFFF;" class="fixed w-full top-0 shadow-lg">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -62,6 +63,7 @@ $enrolled_courses = array_column($stmt->fetchAll(), 'course_id');
     </nav>
 
     <!-- Main Content -->
+    <main id="main-content">
     <section class="pt-20 pb-12">
         <div class="container mx-auto px-4">
             <h1 class="text-3xl font-bold mb-6">Browse Courses</h1>
@@ -94,6 +96,8 @@ $enrolled_courses = array_column($stmt->fetchAll(), 'course_id');
             <?php endif; ?>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer style="background-color: #8B4513; color: white; width: 100vw; margin: 0; padding: 0;">

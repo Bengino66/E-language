@@ -81,6 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </style>
 </head>
 <body style="background-color: #F5F5F5;">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-gray-800 p-2 z-[100] rounded shadow border-2 border-gray-800">Skip to content</a>
     <!-- Navigation Bar -->
     <nav style="background-color: #8B4513; color: #FFFFFF;" class="fixed w-full top-0 shadow-lg">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -103,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </nav>
 
-    <div class="form-container">
+    <main id="main-content" class="form-container">
         <div class="form-card">
             <h1 class="text-2xl font-bold text-center mb-4">Signup</h1>
             <?php if (isset($error)): ?>
@@ -113,17 +114,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="alert alert-success"><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></div>
             <?php endif; ?>
             <form method="POST" onsubmit="return validateSignupForm()">
-                <input type="text" id="username" name="username" placeholder="Username" required>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-                <select name="role" required>
-                    <option value="user">Student</option>
-                    <option value="teacher">Teacher</option>
-                </select>
+                <div class="mb-4 text-left">
+                    <label for="username" class="block text-sm font-semibold mb-1" style="color: #8B4513;">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter username" required>
+                </div>
+                <div class="mb-4 text-left">
+                    <label for="password" class="block text-sm font-semibold mb-1" style="color: #8B4513;">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" required>
+                </div>
+                <div class="mb-4 text-left">
+                    <label for="email" class="block text-sm font-semibold mb-1" style="color: #8B4513;">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter email" required>
+                </div>
+                <div class="mb-4 text-left">
+                    <label for="role" class="block text-sm font-semibold mb-1" style="color: #8B4513;">Join as</label>
+                    <select id="role" name="role" required>
+                        <option value="user">Student</option>
+                        <option value="teacher">Teacher</option>
+                    </select>
+                </div>
                 <button type="submit">Signup</button>
             </form>
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer style="background-color: #8B4513; color: white; width: 100vw; margin: 0; padding: 0;">

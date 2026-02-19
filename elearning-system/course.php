@@ -95,6 +95,7 @@ try {
     </style>
 </head>
 <body class="bg-gray-100">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-gray-800 p-2 z-[100] rounded shadow border-2 border-gray-800">Skip to content</a>
     <!-- Navigation -->
     <nav class="bg-amber-900 text-white fixed w-full top-0 shadow-lg z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -108,7 +109,7 @@ try {
     </nav>
 
     <!-- Main Content -->
-    <main class="pt-24 pb-12 min-h-screen">
+    <main id="main-content" class="pt-24 pb-12 min-h-screen">
         <div class="container mx-auto px-4">
             <div class="bg-white rounded-lg shadow-md p-6 mb-8">
                 <h1 class="text-3xl font-bold text-gray-800 mb-2"><?= htmlspecialchars($course['title']) ?></h1>
@@ -172,6 +173,8 @@ try {
                 </div>
             <?php endif; ?>
         </div>
+    </main>
+
     </main>
 
     <!-- Footer -->

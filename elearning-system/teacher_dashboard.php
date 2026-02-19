@@ -40,6 +40,7 @@ $total_students = array_sum(array_column($courses, 'student_count'));
     </script>
 </head>
 <body style="background-color: #F5F5F5;">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-gray-800 p-2 z-[100] rounded shadow border-2 border-gray-800">Skip to content</a>
     <!-- Navigation Bar -->
     <nav style="background-color: #8B4513; color: #FFFFFF;" class="fixed w-full top-0 shadow-lg">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -63,6 +64,7 @@ $total_students = array_sum(array_column($courses, 'student_count'));
     </nav>
 
     <!-- Main Content -->
+    <main id="main-content">
     <section class="pt-20 pb-12">
         <div class="container mx-auto px-4">
             <h1 class="welcome-message">Welcome, <?php echo htmlspecialchars($teacher['username']); ?>!</h1>
@@ -75,31 +77,55 @@ $total_students = array_sum(array_column($courses, 'student_count'));
             <div class="mb-8">
                 <h2 class="text-2xl font-semibold mb-4">Post Resource</h2>
                 <form method="POST" action="post_resource.php" enctype="multipart/form-data" class="form-card" onsubmit="return validateResourceForm()">
-                    <select name="course_id" required>
-                        <option value="">Select Course</option>
-                        <?php foreach ($courses as $course): ?>
-                            <option value="<?php echo $course['id']; ?>"><?php echo htmlspecialchars($course['title']); ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                    <input type="text" name="title" placeholder="Resource Title" required>
-                    <textarea name="description" placeholder="Resource Description"></textarea>
-                    <select name="resource_type" required>
-                        <option value="document">Document (PDF, Word)</option>
-                        <option value="image">Image (JPEG, PNG)</option>
-                        <option value="video">Video (MP4, WebM)</option>
-                        <option value="url">URL/Link</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <input type="file" name="file" id="resource-file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.mp4,.webm">
-                    <input type="url" name="url" id="resource-url" placeholder="Enter URL (if applicable)">
+                    <div class="mb-2">
+                        <label for="res-course" class="block text-sm font-semibold mb-1" style="color: #8B4513;">Select Course</label>
+                        <select id="res-course" name="course_id" required>
+                            <option value="">Choose a course...</option>
+                            <?php foreach ($courses as $course): ?>
+                                <option value="<?php echo $course['id']; ?>"><?php echo htmlspecialchars($course['title']); ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <label for="res-title" class="block text-sm font-semibold mb-1" style="color: #8B4513;">Resource Title</label>
+                        <input type="text" id="res-title" name="title" placeholder="e.g. Introduction to PHP" required>
+                    </div>
+                    <div class="mb-2">
+                        <label for="res-desc" class="block text-sm font-semibold mb-1" style="color: #8B4513;">Description</label>
+                        <textarea id="res-desc" name="description" placeholder="Briefly describe this resource"></textarea>
+                    </div>
+                    <div class="mb-2">
+                        <label for="res-type" class="block text-sm font-semibold mb-1" style="color: #8B4513;">Resource Type</label>
+                        <select id="res-type" name="resource_type" required>
+                            <option value="document">Document (PDF, Word)</option>
+                            <option value="image">Image (JPEG, PNG)</option>
+                            <option value="video">Video (MP4, WebM)</option>
+                            <option value="url">URL/Link</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <label for="resource-file" class="block text-sm font-semibold mb-1" style="color: #8B4513;">Upload File</label>
+                        <input type="file" name="file" id="resource-file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.mp4,.webm">
+                    </div>
+                    <div class="mb-2">
+                        <label for="resource-url" class="block text-sm font-semibold mb-1" style="color: #8B4513;">Or Enter URL</label>
+                        <input type="url" name="url" id="resource-url" placeholder="https://example.com">
+                    </div>
                     <button type="submit">Post Resource</button>
                 </form>
             </div>
             <div class="mb-8">
                 <h2 class="text-2xl font-semibold mb-4">Create New Course</h2>
                 <form method="POST" action="create_course.php" class="form-card" onsubmit="return validateCourseForm()">
-                    <input type="text" name="title" placeholder="Course Title" required>
-                    <textarea name="description" placeholder="Course Description" required></textarea>
+                    <div class="mb-2">
+                        <label for="course-title" class="block text-sm font-semibold mb-1" style="color: #8B4513;">Course Title</label>
+                        <input type="text" id="course-title" name="title" placeholder="e.g. Advanced Mathematics" required>
+                    </div>
+                    <div class="mb-2">
+                        <label for="course-desc" class="block text-sm font-semibold mb-1" style="color: #8B4513;">Course Description</label>
+                        <textarea id="course-desc" name="description" placeholder="Provide a detailed description" required></textarea>
+                    </div>
                     <button type="submit">Create Course</button>
                 </form>
             </div>
@@ -148,6 +174,8 @@ $total_students = array_sum(array_column($courses, 'student_count'));
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer style="background-color: #8B4513; color: white; width: 100vw; margin: 0; padding: 0;">

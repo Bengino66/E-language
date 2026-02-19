@@ -55,6 +55,7 @@ $courses = $courseStmt->fetchAll();
     <script src="js/script.js"></script>
 </head>
 <body class="bg-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-gray-800 p-2 z-[100] rounded shadow border-2 border-gray-800">Skip to content</a>
     <!-- Navigation Bar -->
     <nav class="bg-brown-800 text-white fixed w-full top-0 z-50 shadow-lg">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -81,23 +82,34 @@ $courses = $courseStmt->fetchAll();
         </div>
     </nav>
 
-    <div class="container mx-auto px-4 pt-24 pb-12">
+    <main id="main-content" class="container mx-auto px-4 pt-24 pb-12">
         <h1 class="text-3xl font-bold mb-8">Create Post</h1>
         <?php if (isset($_SESSION['message'])): ?>
             <div class="alert alert-success"><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></div>
         <?php endif; ?>
         <form method="POST" enctype="multipart/form-data" class="max-w-lg mx-auto">
-            <input type="text" name="title" placeholder="Post Title" class="w-full px-4 py-2 mb-4 border border-brown-800 rounded" required>
-            <textarea name="content" placeholder="Post Content" class="w-full px-4 py-2 mb-4 border border-brown-800 rounded" rows="5" required></textarea>
-            <select name="course_id" class="w-full px-4 py-2 mb-4 border border-brown-800 rounded">
-                <option value="">Select a Course (Optional)</option>
+            <div class="mb-4">
+                <label for="post-title" class="block text-gray-700 font-semibold mb-1">Post Title</label>
+                <input type="text" id="post-title" name="title" placeholder="Enter title" class="w-full px-4 py-2 border border-brown-800 rounded" required>
+            </div>
+            <div class="mb-4">
+                <label for="post-content" class="block text-gray-700 font-semibold mb-1">Post Content</label>
+                <textarea id="post-content" name="content" placeholder="Write your post content here..." class="w-full px-4 py-2 border border-brown-800 rounded" rows="5" required></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="course-id" class="block text-gray-700 font-semibold mb-1">Select Course (Optional)</label>
+                <select id="course-id" name="course_id" class="w-full px-4 py-2 border border-brown-800 rounded">
+                    <option value="">None / General Post</option>
                 <?php foreach ($courses as $course): ?>
                     <option value="<?php echo $course['id']; ?>"><?php echo htmlspecialchars($course['title']); ?></option>
                 <?php endforeach; ?>
             </select>
-            <input type="file" name="files[]" multiple class="w-full mb-4">
+            <div class="mb-4">
+                <label for="post-files" class="block text-gray-700 font-semibold mb-1">Attachments</label>
+                <input type="file" id="post-files" name="files[]" multiple class="w-full">
+            </div>
             <button type="submit" class="w-full bg-brown-800 text-white py-2 rounded hover:bg-light-brown-200 transition">Create Post</button>
         </form>
-    </div>
+    </main>
 </body>
 </html>
